@@ -4,7 +4,7 @@ import Row from '../../components/Row'
 import Col from '../../components/Col'
 import Paragraph from '../../components/Paragraph'
 import Image from 'next/image'
-import Link from 'next/Link'
+import Link from 'next/link'
 import { getArtists } from '../../lib/api'
 
 

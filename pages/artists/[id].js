@@ -4,7 +4,7 @@ import Col from "../../components/Col";
 import Heading from "../../components/Heading";
 import Paragraph from "../../components/Paragraph";
 import Image from 'next/image'
-import Link from 'next/Link'
+import Link from 'next/link'
 
 import {getAllArtistSlugs, getSingleArtistData} from '../../lib/api'
 

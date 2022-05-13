@@ -1,6 +1,6 @@
 import styles from './nav.module.scss'
 
-import Link from 'next/Link'
+import Link from 'next/link'
 
 import classNames from 'classnames/bind'
 

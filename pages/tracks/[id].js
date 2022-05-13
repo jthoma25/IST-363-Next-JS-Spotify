@@ -3,7 +3,7 @@ import Container from "../../components/Container"
 import Col from "../../components/Col"
 import Row from "../../components/Row"
 import Heading from "../../components/Heading"
-import Link from 'next/Link'
+import Link from 'next/link'
 
 
 import {getAllTrackPaths, getSingleTrackData} from '../../lib/api'
