@@ -2,7 +2,9 @@ import Layout from "../../components/Layout";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 import Heading from "../../components/Heading";
+import Container from "../../components/Container";
 import Paragraph from "../../components/Paragraph";
+import Section from "../../components/Section";
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -26,19 +28,31 @@ export async function getStaticProps({params}){
 }
 
 const SingleArtistPage = ({artistData}) => {
-    const {title, slug, featuredImage, artistInformation} = artistData;
+    const {title, slug, content, featuredImage, artistInformation} = artistData;
     const {sourceUrl, altText, mediaDetails} = featuredImage.node;
     const {artistsToAlbums} = artistInformation;
     return <Layout>
+        <Container>
+        <Row>
+            <Col xs="3" sm="3">
         <Image 
             src={sourceUrl}
             alt={altText}
             width={mediaDetails.width}
             height={mediaDetails.height}
         />
+            </Col>
+            <Col xs="9" sm="9">
+                <Heading level="1">{title}</Heading>
+                <Paragraph intro>
+                    {content}
+                </Paragraph>
+            </Col>
+
+        </Row>
        <Heading level="1">{title}</Heading>
     {artistsToAlbums && 
-       <section>
+       <Section>
            <Heading level="2">Albums</Heading>
            <Row>
            {artistsToAlbums.map((album) => {
@@ -59,7 +73,7 @@ const SingleArtistPage = ({artistData}) => {
                </Col>
            })}
            </Row>
-        </section>
+        </Section>
     }   
     <Paragraph>
         <Link href="/artists">
@@ -69,6 +83,7 @@ const SingleArtistPage = ({artistData}) => {
         </Link>
 
     </Paragraph>
+    </Container>
     </Layout>
 }
 

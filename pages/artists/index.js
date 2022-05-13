@@ -3,6 +3,7 @@ import Heading from '../../components/Heading'
 import Row from '../../components/Row'
 import Col from '../../components/Col'
 import Paragraph from '../../components/Paragraph'
+import Container from '../../components/Container'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getArtists } from '../../lib/api'
@@ -20,6 +21,7 @@ export async function getStaticProps(){
 
 const ArtistsLandingPage = ({artists}) => {
     return <Layout>
+        <Container>
         <Heading level="1">Artists</Heading>
         <Row>
             {artists.map((artist, index) => {
@@ -44,6 +46,7 @@ const ArtistsLandingPage = ({artists}) => {
        
         })}
          </Row>
+        </Container>
     </Layout>
 }
 
