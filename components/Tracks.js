@@ -5,7 +5,7 @@ function convertDuration(duration){
     const minutes = Math.floor(duration / 60);
     const seconds = duration % 60;
     const formattedSeconds = (Math.round(seconds * 100) / 100).toFixed(2);
-    const formattedDuration = `${minutes}:${formattedSeconds}`;
+    const formattedDuration = `${minutes}:${seconds}`;
     return formattedDuration;
 }
 
