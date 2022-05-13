@@ -37,7 +37,8 @@ const SingleAlbumPage = ({albumData}) => {
                             />
         <Heading level="1">{title}</Heading>
         <Heading level="2">{year}</Heading>
-        {artistsToAlbums.map((artist, index) => {
+        {artistsToAlbums &&
+            artistsToAlbums.map((artist, index) => {
             const {title, slug} = artist;
             return <Heading level="2">
                 <Link href={`/artists/${slug}`}>
@@ -50,7 +51,7 @@ const SingleAlbumPage = ({albumData}) => {
         <section>
         <Heading level="2">Songs</Heading>
         <Row>
-        {songsToAlbums.map((song, index) => {
+        {songsToAlbums && songsToAlbums.map((song, index) => {
             const {title} = song;
              return <Col key={index} xs="12" sm="12">
                 <Heading level="3">{title}</Heading>
