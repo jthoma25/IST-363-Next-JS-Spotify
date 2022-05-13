@@ -48,10 +48,11 @@ const SingleAlbumPage = ({albumData}) => {
                     </Link>
                 </Heading>
         })}
+        {songsToAlbums && 
         <section>
         <Heading level="2">Songs</Heading>
         <Row>
-        {songsToAlbums && songsToAlbums.map((song, index) => {
+        {songsToAlbums.map((song, index) => {
             const {title} = song;
              return <Col key={index} xs="12" sm="12">
                 <Heading level="3">{title}</Heading>
@@ -59,6 +60,7 @@ const SingleAlbumPage = ({albumData}) => {
         })}
         </Row>
         </section>
+        }   
     </Layout>
 
 }
