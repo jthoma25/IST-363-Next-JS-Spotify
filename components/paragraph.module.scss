@@ -1,0 +1,11 @@
+@use '../sass/abstracts/mixins.scss';
+@use '../sass/abstracts/vars.scss';
+
+.paragraph{
+    font-size: 1rem;
+    color: green;
+    &.intro{
+        font-size: 2rem;
+        color: brown;
+    }
+}
