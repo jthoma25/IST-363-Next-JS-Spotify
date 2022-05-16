@@ -5,8 +5,23 @@ import Row from '../components/Row'
 import Container from '../components/Container'
 import Col from '../components/Col'
 
+import { getTracks } from '../lib/api'
 
-export default function Home() {
+
+export async function getStaticProps() {
+  // Get external data from the file system, API, DB, etc.
+  const tracks = await getTracks();
+
+  // The value of the `props` key will be
+  //  passed to the `Home` component
+  return {
+    props: {
+        tracks
+    }
+  }
+}
+
+export default function Home({tracks}) {
   return (
     <Layout>
       <Head>
@@ -26,7 +41,7 @@ export default function Home() {
       </section>
         
 
-        <TracksByGenre />
+        <TracksByGenre items={tracks}/>
     </Layout>
   )
 }

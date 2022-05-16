@@ -11,15 +11,14 @@ import {
 
 
 
-const TracksByGenre = () => {
-	const tracks = getTracks();
+const TracksByGenre = ({items}) => {
 	const genres = getGenres();
 
     const [activeGenre, setActiveGenre] = useState("Rock");
     return <div>
                 <h2>Tracks by Genre</h2>
                 <Tabs items={genres} activeItem={activeGenre} clickHandler={setActiveGenre}/>
-                <Tracks items={filterTracksByGenre(tracks, activeGenre)} />
+                <Tracks items={filterTracksByGenre(items, activeGenre)} />
             </div>
 }
 

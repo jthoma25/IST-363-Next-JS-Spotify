@@ -59,12 +59,7 @@ const SingleAlbumPage = ({albumData}) => {
             </Col>
         </Row>
         
-        {songsToAlbums && 
-        <Section>
-            <Heading level="2">Songs</Heading>
-            <Tracks items={songsToAlbums} />
-        </Section>
-        }   
+        
         </Container>
     </Layout>
 
