@@ -22,9 +22,9 @@ const TracksLandingPage = ({tracks}) => {
     return <Layout>
         <Heading level="1">All tracks</Heading>
         {tracks.map((track, index) => {
-            const {title, slug} = track;
+            const {title, slug} = track.node;
             return <p key={index}>
-                <Link href={`/tracks/${track.slug}`}>
+                <Link href={`/tracks/${slug}`}>
                     <a>
                         {title}
                     </a>
