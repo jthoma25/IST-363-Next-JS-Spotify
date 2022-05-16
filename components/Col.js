@@ -4,7 +4,7 @@ import styles from './col.module.scss'
 
 let cx = classNames.bind(styles)
 
-const Col = ({children, xs, sm, md, lg, textAlign = "left", marginBottom}) => {
+const Col = ({children, xs, sm, md, lg, textAlign = "left", marginBottom, flexDirection="column", justifyContent="flex-start", alignItems = "flex-start"}) => {
     
     let colClasses = cx({
         col : true,
@@ -12,8 +12,13 @@ const Col = ({children, xs, sm, md, lg, textAlign = "left", marginBottom}) => {
         [`col-sm-${sm}`] : sm,
         [`col-md-${md}`] : md,
         [`col-lg-${lg}`] : lg,
-        [`text-align-${textAlign}`] : textAlign.at,
-        [`margin-bottom-$]-${marginBottom}`] : marginBottom
+        [`text-align-${textAlign}`] : textAlign,
+        [`flex-direction-${flexDirection}`] : flexDirection,
+        [`justify-content-${justifyContent}`] : justifyContent,
+        [`margin-bottom-$]-${marginBottom}`] : marginBottom,
+        [`align-items-$]-${alignItems}`] : alignItems,
+        flexDirection,
+        justifyContent
     })
 
     return <div className={colClasses}>{children}</div>

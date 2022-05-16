@@ -1,27 +1,26 @@
 import Head from 'next/head'
 import TracksByGenre from '../components/TracksByGenre'
 import Layout from '../components/Layout'
-import Row from '../components/Row'
-import Container from '../components/Container'
-import Col from '../components/Col'
+import Showcase from '../components/Showcase'
+import NewReleases from '../components/NewReleases'
 
-import { getTracks } from '../lib/api'
+import { getAlbums } from '../lib/api'
 
 
 export async function getStaticProps() {
   // Get external data from the file system, API, DB, etc.
-  const tracks = await getTracks();
+  const albums = await getAlbums();
 
   // The value of the `props` key will be
   //  passed to the `Home` component
   return {
     props: {
-        tracks
+        albums
     }
   }
 }
 
-export default function Home({tracks}) {
+export default function Home({albums}) {
   return (
     <Layout>
       <Head>
@@ -29,19 +28,10 @@ export default function Home({tracks}) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="This is a summary of my website" />
       </Head>
-      <section>
-        <Container>
-          <Row>
-            <Col sm="6" md="4" lg="3">Col1</Col>
-            <Col sm="6" md="4" lg="3">Col2</Col>
-            <Col sm="6" md="4" lg="3">Col3</Col>
-            <Col sm="6" md="4" lg="3">Col3</Col>
-          </Row>
-        </Container>
-      </section>
-        
+      <Showcase />
+      <NewReleases items={albums}/>
 
-        <TracksByGenre items={tracks}/>
+        <TracksByGenre items={albums}/>
     </Layout>
   )
 }

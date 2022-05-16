@@ -42,7 +42,7 @@ const SingleArtistPage = ({artistData}) => {
             height={mediaDetails.height}
         />
             </Col>
-            <Col xs="9" sm="9">
+            <Col xs="9" sm="9" justifyContent="center">
                 <Heading level="1">{title}</Heading>
                 <Paragraph intro>
                     {content}
